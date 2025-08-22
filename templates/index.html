@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}URL Shortener{% endblock %}
+
+{% block content %}
+    <h1>URL Shortener</h1>
+    <form method="POST" action="/">
+        <input type="text" name="url" placeholder="Enter URL (e.g., https://example.com)" required>
+        <button type="submit">Shorten URL</button>
+    </form>
+    {% if short_url %}
+        <p>Shortened URL: <a href="{{ short_url }}" target="_blank">{{ short_url }}</a></p>
+    {% endif %}
+    <p>Enter a URL and get a shortened version. Click the short URL to test redirection.</p>
+{% endblock %}
